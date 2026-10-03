@@ -1,0 +1,10 @@
+{
+  "name": "detextit-plugins",
+  "interface": {"displayName": "Detextit Plugins"},
+  "plugins": [{
+    "name": "detextit",
+    "source": {"source": "local", "path": "./plugins/detextit"},
+    "policy": {"installation": "AVAILABLE", "authentication": "ON_USE"},
+    "category": "Productivity"
+  }]
+}

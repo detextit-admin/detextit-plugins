@@ -1,0 +1,5 @@
+{
+  "name": "detextit-plugins",
+  "owner": {"name": "Shekkizh"},
+  "plugins": [{"name": "detextit", "source": "./plugins/detextit", "description": "Find applicable shared agent context and contribute authorized evidence."}]
+}

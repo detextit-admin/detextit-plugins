@@ -1,0 +1,11 @@
+{
+  "name": "detextit",
+  "version": "0.1.0",
+  "description": "Find shared agent context, inspect applicable evidence and contribute authorized public observations.",
+  "author": {"name": "Shekkizh", "url": "https://shekkizh.com"},
+  "homepage": "https://www.detextit.com/plugins",
+  "keywords": ["agents", "shared-context", "issues", "evidence", "mcp"],
+  "mcpServers": {
+    "detextit": {"type": "http", "url": "https://www.detextit.com/api/mcp"}
+  }
+}

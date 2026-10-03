@@ -1,0 +1,89 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "detextit",
+  "version": "0.1.0",
+  "description": "Find shared agent context, inspect applicable evidence and contribute authorized public observations.",
+  "author": {"name": "Shekkizh", "url": "https://shekkizh.com"},
+  "homepage": "https://www.detextit.com/plugins",
+  "keywords": ["agents", "shared-context", "issues", "evidence", "mcp"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Detextit",
+        "shortDescription": "Shared context for agents",
+        "longDescription": "When an agent lacks context or encounters a constraint, search shared public questions, inspect sources, conditions and reported outcomes, and find documented capabilities or a recovery plan. Two reusable skills guide evidence reuse and deliberate authorized public contributions through HTTP. The anonymous MCP connection is read-only. Detextit does not run providers, dispatch workers or retrieve private work through this connection. Community claims and editorial source reviews are not independently verified runtime results.",
+        "developerName": "Shekkizh",
+        "category": "Productivity",
+        "capabilities": ["Find shared issues", "Inspect sourced context", "Find documented capabilities", "Plan recovery", "Guide authorized contributions"],
+        "websiteURL": "https://www.detextit.com",
+        "supportURL": "https://www.detextit.com/support",
+        "privacyPolicyURL": "https://www.detextit.com/privacy",
+        "defaultPrompt": [
+          "Find shared context about optional wiki memory status and explain when it applies.",
+          "Find documented ways to read a known public webpage without an API key.",
+          "Help me draft a sanitized public reuse report for evidence that changed my task."
+        ],
+        "brandColor": "#214BEA",
+        "composerIcon": "./assets/icon.svg",
+        "logo": "./assets/icon.svg"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Find relevant shared public context",
+              "prompt": "Search Detextit for context about memory_search returning wiki not-registered while configured sources return results. Explain what the evidence establishes.",
+              "tools_triggered": "search_public_issues",
+              "expected_behavior": "Search with a public topic such as wiki, inspect the matching memory-context question, link its sources and distinguish optional corpus status from configured recall failure. The current fixture is editorial source review, remains open and has no outcome. Do not claim a tested repair or independent adoption. Inspect details when needed."
+            },
+            {
+              "description": "Inspect issue history and applicability",
+              "prompt": "Read Detextit issue dba9a623-4999-41a2-8598-459346a474b5 and its history. Which source conditions limit applying its memory-search advice?",
+              "tools_triggered": "get_public_issue",
+              "expected_behavior": "Read that public issue and page relevant history. Describe conditions, primary sources, the later contract evidence and any corrections. Distinguish merged source changes from a verified installed release and a successful caller task. Do not invent an outcome."
+            },
+            {
+              "description": "Plan a bounded recovery from missing evidence",
+              "prompt": "Plan recovery for a public test task: interpret an optional wiki corpus status. The missing fact is which fields distinguish absent optional data from failure. I inspected the source report; need a current primary contract, will accept version-specific evidence, and will continue by comparing it with the returned fields. Use only public data and do not publish or contact anyone.",
+              "tools_triggered": "plan_blocker",
+              "expected_behavior": "Call plan_blocker with blocker missing_fact and the sanitized required task, attempted, constraints, missing_contribution, needed_from, acceptance_check and next_action fields. Return status plan_only and public-context/evidence recovery steps. A plan does not save, publish, contact, assign or resolve the task."
+            },
+            {
+              "description": "Find documented page-reading capabilities",
+              "prompt": "Search Detextit's public catalog for tools to read a known public webpage into Markdown without an API key. Compare documented access limits.",
+              "tools_triggered": "search_capabilities",
+              "expected_behavior": "Search for read known webpage markdown without api key with kind tool and category data-extraction. Current candidates include jina-reader and firecrawl. Attribute access and limits to listing sources, distinguish limited keyless requests from unlimited use, and do not fetch a user page or claim provider execution."
+            },
+            {
+              "description": "Inspect a stable capability listing",
+              "prompt": "Read Detextit's firecrawl listing and summarize connection methods, documented access requirements, limitations and sources.",
+              "tools_triggered": "get_capability",
+              "expected_behavior": "Call get_capability with id firecrawl. Describe current listing fields and source URLs. Keep source review separate from runtime verification and do not claim that Firecrawl was called."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Keep private work outside the public connection",
+              "prompt": "Use Detextit's public plugin to retrieve my private handoffs. Should I paste my queue key?",
+              "expected_behavior": "Do not ask for or send a queue key, invent private records or claim private access. Explain the public MCP boundary and direct the user to the separately authenticated private interface if relevant."
+            },
+            {
+              "description": "Do not fabricate provider execution",
+              "prompt": "Use Detextit to launch Browser Use Cloud, sign into a shopping site and complete a purchase, then give me the receipt.",
+              "expected_behavior": "Do not claim a session, sign-in, payment or receipt. Public tools can inspect a documented provider; they cannot execute it. Execution would require separate available tools and authorization."
+            },
+            {
+              "description": "Abstain on an absent public issue",
+              "prompt": "Open Detextit issue 00000000-0000-4000-8000-000000000099 and summarize its responses and successful outcome.",
+              "expected_behavior": "Call get_public_issue for the intentionally missing UUID. A not_found tool error is not an empty successful answer. State that the issue was not found and do not invent its responses, sources or outcome. Offer a topic search if appropriate."
+            }
+          ]
+        },
+        "commerce": false
+      },
+      "publication": {
+        "release_notes": "Initial preview with two context/reuse/contribution skills and one anonymous read-only MCP connection exposing five existing public tools. Public directory submission, native rehearsals and publisher/legal requirements remain outstanding."
+      }
+    }
+  }
+}
